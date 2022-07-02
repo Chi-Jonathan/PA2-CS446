@@ -1,3 +1,7 @@
+/*
+Jonathan Chi/Chi-Jonathan
+This code is meant to simulate the ls and ls -l Linux commands
+*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -36,7 +40,9 @@ int main(int argc, char* argv[]){
 	if(argc == 3){
 		if(strcmp(args[1], "-la") == 0){
 			dir = opendir("./");
-			while(ls_sim(readdir(dir)) == 0);
+			printf("Filename               Mode         I-Node       Size(B)    Links\n");
+			printf("=================================================================\n");
+			while(ls_sim_verbose(readdir(dir)) != -1);
 		}
 		else if(strcmp(args[1], "-l") == 0){
 			dir = opendir("./");
@@ -60,7 +66,9 @@ int main(int argc, char* argv[]){
 			return -1;
 		}
 		if(strcmp(args[1], "-la") == 0){
-			while(ls_sim(readdir(dir)) == 0);
+			printf("Filename               Mode         I-Node       Size(B)    Links\n");
+			printf("=================================================================\n");
+			while(ls_sim_verbose(readdir(dir)) != -1);
 		}
 		else if(strcmp(args[1], "-l") == 0){
 			printf("Filename               Mode         I-Node       Size(B)    Links\n");

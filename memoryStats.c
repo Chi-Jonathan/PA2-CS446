@@ -1,3 +1,7 @@
+/*
+Jonathan Chi/Chi-Jonathan
+This code is meant to simulate the Linux "free" command
+*/
 #include <unistd.h>
 #include <stdio.h>
 #include <sys/statvfs.h>
